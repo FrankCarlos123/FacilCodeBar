@@ -43,25 +43,6 @@ body {
     font-size: 1.5rem;
 }
 
-.input-group {
-    margin-bottom: 15px;
-}
-
-input {
-    width: 100%;
-    padding: 12px;
-    background-color: var(--bg-color);
-    border: 1px solid var(--border-color);
-    border-radius: 6px;
-    color: var(--text-color);
-    font-size: 16px;
-}
-
-input:focus {
-    outline: none;
-    border-color: var(--primary-color);
-}
-
 .button-group {
     display: flex;
     gap: 10px;
@@ -78,6 +59,7 @@ button {
     cursor: pointer;
     font-size: 16px;
     transition: opacity 0.3s;
+    height: 50px; /* Altura fija para los botones */
 }
 
 button:hover {
@@ -90,15 +72,18 @@ button:hover {
 
 .camera-section {
     margin-bottom: 15px;
-}
-
-.camera-btn {
-    background-color: var(--primary-color);
-    margin-bottom: 10px;
+    text-align: center;
 }
 
 #camera {
     width: 100%;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+#captured-image {
+    width: 100%;
+    max-width: 100%;
     border-radius: 6px;
     margin-bottom: 10px;
 }
@@ -133,6 +118,11 @@ button:hover {
 }
 
 @media (max-width: 480px) {
+    body {
+        padding: 10px;
+        min-width: unset; /* Removemos el min-width para móviles */
+    }
+
     .container {
         padding: 15px;
     }
@@ -141,8 +131,20 @@ button:hover {
         font-size: 1.2rem;
     }
 
-    input, button {
+    button {
         padding: 10px;
         font-size: 14px;
+        height: 45px; /* Altura ligeramente menor en móviles */
+    }
+
+    .qr-container {
+        padding: 15px;
+    }
+}
+
+/* Para pantallas muy pequeñas */
+@media (max-width: 320px) {
+    .button-group {
+        flex-direction: column;
     }
 }
