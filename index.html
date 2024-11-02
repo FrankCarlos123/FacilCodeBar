@@ -1,6 +1,7 @@
 <html>
   <head>
     <title>Generador QR</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -11,15 +12,11 @@
         <button class="clear-btn" onclick="clearAll()">Limpiar</button>
       </div>
       <div class="camera-section">
+        <video id="camera" autoplay playsinline style="display: none; width: 100%; border-radius: 6px;"></video>
         <canvas id="canvas" style="display: none"></canvas>
         <img
           id="captured-image"
-          style="
-            display: none;
-            max-width: 100%;
-            border-radius: 6px;
-            margin-bottom: 10px;
-          "
+          style="display: none; width: 100%; border-radius: 6px; margin-bottom: 10px;"
         />
       </div>
       <div class="qr-container">
